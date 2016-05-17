@@ -1,0 +1,20 @@
+web:
+    image: marcinpiela/docker-symfony
+    ports:
+        - 8895:80
+    volumes:
+        - ./:/var/www/
+    tty: True
+db:
+    image: mysql
+    command: mysqld --port 3009
+    net: "host"
+    environment:
+        MYSQL_ROOT_PASSWORD: abc
+        MYSQL_DATABASE: co_jemy
+        MYSQL_USER: co_jemy
+        MYSQL_PASSWORD: co_jemy
+npm:
+    image: qcumbeer/docker-npm
+    volumes_from:
+        - web

@@ -2,7 +2,10 @@
 .idea/
 
 # Docker
-!docker-compose.yml
+!docker-compose.ymle
+
+# NPN
+node_modules/
 
 # Cache and logs (Symfony2)
 /app/cache/*
